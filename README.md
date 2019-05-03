@@ -1,6 +1,8 @@
 # Auto Web Player
 
-A web audio player allowing you to play specific songs on a fixed time per day
+A web application with which one can play specific songs on a daily basis
+
+![img](https://i.loli.net/2019/05/03/5ccc5ff52d63b.png)
 
 ## Requirements
 

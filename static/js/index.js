@@ -284,6 +284,7 @@ window.onload = () => {
         setting.songDir = songDirInput.value
     })
     songVolumeInput.value = setting.volume
+    player.audio.volume = setting.volume / 100
     songVolumeInput.addEventListener('change', () => {
         setting.volume = songVolumeInput.value
     })
