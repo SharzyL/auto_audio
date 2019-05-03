@@ -1,0 +1,8 @@
+.vscode
+.idea
+__pycache__
+.eslintrc.yml
+package.json
+test.*
+font-awesome-4.7.0
+songs

@@ -1,0 +1,151 @@
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3367D6;
+    color: white;
+    width: 100%;
+    height: 100px;
+    vertical-align: middle;
+}
+
+#logo {
+    margin-right: 10px;
+}
+
+h1 {
+    margin: 0px;
+    padding-left: 10px;
+    font-weight: inherit;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: default;
+}
+
+#control-btn {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 30px;
+}
+
+#control-btn.btn-start {
+    background-color: #4CAF50;
+    transition: .3s
+}
+
+#control-btn.btn-start:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+
+#control-btn.btn-stop {
+    background-color: #ff1a1a;
+    transition: .3s;
+}
+
+#control-btn.btn-stop:hover {
+    background-color: white;
+    color: #ff1a1a;
+}
+
+#playing-icon {
+    position: absolute;
+    left: -20px;
+    top: 11px;
+}
+
+.session {
+    padding: 20px 10px 20px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.session-head {
+    margin-bottom: 5px;
+}
+
+.session-name {
+    background-color: white;
+    display: inline-block;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.session-name:hover {
+    cursor: pointer;
+    background-color: #ccebff;
+}
+
+.left-time {
+    font-size: 13px;
+    padding: 4px;
+    border: 1px solid #3367D6;
+    color: #3367D6;
+    border-radius: 8px;
+    margin-right: 30px;
+    float: right;
+    position: relative;
+    top: 12px;
+    cursor: default;
+}
+
+.song-box {
+    border-radius: 5px;
+    margin: 0px 20px;
+    overflow: hidden;
+    box-shadow: #808080 0px 0px 2px;
+}
+
+.song-line:nth-child(odd) {
+    background-color: #cccccc;
+}
+
+.song-line:nth-child(even) {
+    background-color: #e6e6e6;
+}
+
+p.song-line {
+    font-size: 16px;
+    padding: 8px;
+    text-indent: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+}
+
+p.song-line:hover {
+    position: relative;
+    box-shadow: inset 2px 2px 1px #808080, inset -2px -2px 1px #808080;
+    text-indent: 45px;
+}
+
+.audio-wrap {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin: 0px;
+    padding: 20px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+audio {
+    width: 70%;
+    vertical-align: middle;
+}
