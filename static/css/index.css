@@ -137,7 +137,7 @@ h1 {
 
 .session-name {
     background-color: white;
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 4px 8px;
@@ -150,6 +150,33 @@ h1 {
     background-color: #ccebff;
 }
 
+.play-time {
+    border-radius: 8px;
+    border: 1px solid #3367D6;
+    float: right;
+    line-height: 100%;
+    margin-right: 30px;
+    color: #3367D6;
+    font-size: 13px;
+    padding: 4px;
+}
+
+.time-input {
+    background-color: #bfcff2;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 0px 4px;
+    padding: 0px 2px;
+    width: 18px;
+    color: inherit;
+    font-size: inherit;
+    text-align: center;
+}
+
+/* .time-input:focus {
+    background-color: white;
+} */
+
 .left-time {
     font-size: 13px;
     padding: 4px;
@@ -157,10 +184,9 @@ h1 {
     color: #3367D6;
     border-radius: 8px;
     margin-right: 30px;
-    float: right;
-    position: relative;
-    top: 12px;
+    margin-bottom: 10px;
     cursor: default;
+    float: right;
 }
 
 .song-box {
