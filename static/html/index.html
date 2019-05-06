@@ -31,6 +31,47 @@
     <div class="audio-wrap">
         <div class="cplayer" id="cplayer"></div>
     </div>
+
+    <div id="dialog-shadow" style="display: none"></div>
+
+    <!-- 出错时的对话框 -->
+    <div class="dialog-wrap" id="error-dialog-wrap" style="display: none">
+        <div id="error-dialog" class="dialog">
+            <h1 id="error-title">Error</h1>
+            <p id="error-text">We failed to fetch songs data because server didn't responce</p>
+            <button class="button-wb" id="error-confirm">confirm</button>
+        </div>
+    </div>
+
+    <!-- 设置时的对话框 -->
+    <div class="dialog-wrap" id="setting-dialog-wrap" style="display: none">
+        <div id="setting-dialog" class="dialog">
+            <h1>Playing Settings</h1>
+            <ul>
+                <li id="play-time">
+                    Scheduled at 
+                    <input type="text" class="time-input" id="hours-input" maxlength="2">
+                    :
+                    <input type="text" class="time-input" id="minutes-input" maxlength="2">
+                </li>
+                <li id="play-max-time">
+                    At most play <input type="text" class="time-input" id="max-input" maxlength="3"> minutes
+                </li>
+                <li id="play-mode-select">
+                    Play mode:
+                    <span class="play-mode fa fa-refresh" id="play-mode-single" title="Repeat current song"></span>
+                    <span class="play-mode fa fa-list-ul" id="play-mode-list" title="Play by list"></span>
+                    <span class="play-mode fa fa-retweet" id="play-mode-circular" title="Repeat by list"></span>
+                    <span class="play-mode fa fa-random" id="play-mode-shuffle" title="Shuffle play"></span>
+                </li>
+            </ul>
+            <p>
+                <button class="button-wb" id="setting-confirm">Confirm</button>
+                <button class="button-wb" id="setting-cancel">Cancel</button>
+                <span class="setting-msg">Invalid input</span>
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>

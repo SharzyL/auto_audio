@@ -4,6 +4,8 @@ import os
 from os.path import join
 import configparser
 
+# TODO 服务器端渲染
+
 app = Flask(__name__)
 
 default_song_dir = 'songs/'
@@ -72,7 +74,6 @@ def songinfo():
         song_dir = setting['song dir']
 
     try:
-        print(get_songs(song_dir))
         return json.dumps(get_songs(song_dir), ensure_ascii=False)
     except FileNotFoundError:
         return f'Error 400: Directory "{song_dir}" does not exist', 400

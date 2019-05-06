@@ -6,11 +6,13 @@
 //  load(src)     -- 加载src所指定的资源以备播放
 //  toggle()      -- 切换播放/暂停
 //  toggleMuted() -- 切换静音/不静音
+
+//可以set和get的成员变量：
+//  volume        -- 音量(0到1之间的实数)
+//  currentTime   -- 播放进度(以秒为单位)
 // 其它audio对象所给出的方法可以通过cplayer.audio.<func>调用
 
-// TODO: 播放时间字体
 // TODO: 音量控件改为动态的
-
 
 (function () {
     function init_cplayer(cplayer) {
@@ -43,7 +45,23 @@
     
         ;[cplayer.audio, cplayer.playBtn, cplayer.time, cplayer.prog, cplayer.sound, cplayer.vol
         ].forEach((widget) => cplayer.appendChild(widget))
+
+        Object.defineProperty(cplayer, 'volume', {
+            get : () => cplayer.audio.volume,
+            set : (value) => {
+                cplayer.audio.value = value
+                cplayer.vol.value = value
+            }
+        })
     
+        Object.defineProperty(cplayer, 'currentTime', {
+            get : () => cplayer.audio.currentTime,
+            set : (value) => {
+                cplayer.audio.currentTime = value
+                cplayer.prog.value = value * 100
+            }
+        })
+
         cplayer.audio.addEventListener('loadeddata', () => {
             cplayer._update()
         })
@@ -122,6 +140,7 @@
             }
         }
     
+        //输入一个正整数表示秒数，输出一个形如MM:SS的字符串
         var _formatTime = (seconds) => {
             var intDiv = (a, b) => [Math.floor(a / b), a % b]
             var minutes;
@@ -132,12 +151,14 @@
             return minutes + ':' + seconds
         }
     
+        //当拖动进度条是调用，用来更新cplayer.time的显示数值
         cplayer._flushByProg = () => {
             var played = cplayer.prog.value
             var total = Math.floor(cplayer.audio.duration)
             cplayer.time.innerHTML = _formatTime(played) + ' / ' + _formatTime(total)
         }
     
+        //播放音乐时调用，修改cplayer.time的数值以及改变进度条的位置
         cplayer._update = () => {
             var played = Math.floor(cplayer.audio.currentTime)
             var total = Math.floor(cplayer.audio.duration)

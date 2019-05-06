@@ -16,6 +16,8 @@
 }
 
 .cplayer button {
+    border: none;
+    color: black;
     padding: 10px;
     width: 36px;
     border-radius: 50%;

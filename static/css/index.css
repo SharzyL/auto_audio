@@ -19,6 +19,31 @@ header {
     vertical-align: middle;
 }
 
+
+/* 蓝白按钮 */
+.button-wb {
+    cursor: pointer;
+    display: inline;
+    text-align: center;
+    padding: 4px 8px;
+    margin: 10px auto;
+    border: #3367D6 solid 1px;
+    color: #3367D6;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.button-wb-disabled {
+    pointer-events: none;
+    cursor: none;
+    border: #999999 solid 1px;
+    color: #999999;
+}
+
+.button-wb:hover {
+    background-color: #ccebff
+}
+
 #logo {
     margin-right: 10px;
 }
@@ -49,7 +74,7 @@ h1 {
     height: 180px;
     color: black;
     background-color: #e6e6e6;
-    top: 62px; 
+    top: 62px;
     /* top = (height - 55) / 2 */
     transition: .5s background-color;
     box-shadow: inset 0px 0px 4px #bfbfbf;
@@ -67,7 +92,7 @@ h1 {
 #setting-btn {
     font-size: 35px;
     cursor: pointer;
-    color:inherit;
+    color: inherit;
     background-color: transparent;
     float: right;
     padding: 10px;
@@ -87,7 +112,6 @@ h1 {
     margin: 10px 0px;
     font-size: 20px;
     width: 100%;
-    background-color: white;
 }
 
 #control-btn {
@@ -132,15 +156,24 @@ h1 {
 }
 
 .session-head {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.setting-icon {
+    margin-left: 20px;
+    font-size: 25px !important;
+}
+
+.setting-icon:hover {
+    cursor: pointer;
 }
 
 .session-name {
     background-color: white;
-    /* display: inline-block; */
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 5px;
     transition: .3s;
 }
@@ -150,19 +183,8 @@ h1 {
     background-color: #ccebff;
 }
 
-.play-time {
-    border-radius: 8px;
-    border: 1px solid #3367D6;
-    float: right;
-    line-height: 100%;
-    margin-right: 30px;
-    color: #3367D6;
-    font-size: 13px;
-    padding: 4px;
-}
-
 .time-input {
-    background-color: #bfcff2;
+    background-color: #f2f2f2;
     border-radius: 5px;
     font-size: 15px;
     margin: 0px 4px;
@@ -173,9 +195,10 @@ h1 {
     text-align: center;
 }
 
-/* .time-input:focus {
-    background-color: white;
-} */
+.input-invalid {
+    background-color: #ffb3b3;
+    box-shadow: inset 0px 0px 3px #ff3333;
+}
 
 .left-time {
     font-size: 13px;
@@ -184,9 +207,10 @@ h1 {
     color: #3367D6;
     border-radius: 8px;
     margin-right: 30px;
-    margin-bottom: 10px;
     cursor: default;
-    float: right;
+    position: absolute;
+    right: 0px;
+    bottom: 2px;
 }
 
 .song-box {
@@ -233,11 +257,92 @@ p.song-line:hover {
     bottom: 0px;
 }
 
-audio {
-    width: 70%;
-    vertical-align: middle;
-}
-
 footer {
     height: 92px;
+}
+
+#dialog-shadow {
+    z-index: 2;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.3);
+    opacity: .5;
+}
+
+.dialog-wrap {
+    z-index: 2;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog {
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px #999999;
+    padding: 5px 15px;
+    width: 300px;
+    background-color: white;
+}
+
+.dialog h1 {
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.dialog ul {
+    margin-left: 20px
+}
+
+.dialog li {
+    line-height: 30px;
+}
+
+#error-confirm:hover {
+    cursor: pointer;
+}
+
+.play-mode {
+    font-size: 20px;
+    margin: 0px 5px;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+.play-mode:hover {
+    background-color: #f2f2f2;
+}
+
+.play-mode-selected {
+    background-color: #e6e6e6;
+}
+
+.play-mode-selected:hover {
+    background-color: #d9d9d9
+}
+
+#setting-dialog p {
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#max-input {
+    width: 28px;
+}
+
+.setting-msg {
+    font-size: 12px;
+    color: red;
+    width: 100px;
+    visibility: hidden;
 }
